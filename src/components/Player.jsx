@@ -1,5 +1,19 @@
 import {useState} from 'react';
 
+const ICONS = [
+    { name: '🎀', src: '/icons/bow.png' },
+    { name: '🍒', src: '/icons/cherry.png' },
+    { name: '🌼', src: '/icons/flower.png' },
+    { name: '🐟', src: '/icons/goldfish.png' },
+    { name: '🧸', src: '/icons/gummy.png' },
+    { name: '💖', src: '/icons/heartchat.png' },
+    { name: '🌷', src: '/icons/heartflower.png' },
+    { name: '🍭', src: '/icons/lollipop.png' },
+    { name: '🌈', src: '/icons/rainbow.png' },
+    { name: '🍓', src: '/icons/strawberry.png' },
+    { name: '☀️', src: '/icons/sun.png' }
+  ];
+
 export default function Player({initialName, symbol, isActive, onChangeName}){
     const [playerName, setPlayerName] = useState(initialName);
     //initial phase is false when loading page: NOT editing player name or showing input field
