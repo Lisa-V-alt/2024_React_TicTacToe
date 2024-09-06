@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cute+Font&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -20,8 +19,8 @@ html {
 body {
   background: radial-gradient(
       circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
+      rgba(119, 135, 224, 0.7),
+      rgba(204, 96, 214, 0.7)
     ),
     url('bg-pattern-dark.png');
   background-repeat: repeat;
@@ -34,17 +33,17 @@ header {
 }
 
 header img {
-  width: 8rem;
+  width: 10rem;
   object-fit: contain;
   margin: 3rem auto 1rem auto;
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.1));
 }
 
 h1 {
-  font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
+  font-family: "Bagel Fat One", system-ui;
+  font-size: 5rem;
   margin: 0 auto 3rem auto;
-  color: #3f3b00;
+  color: #ffffff;
 }
 
 #game-container {
@@ -52,8 +51,8 @@ h1 {
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 6px;
-  background: linear-gradient(#383624, #282617);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#74659e, #e49fd4);
+  box-shadow: 0 0 20px rgba(15, 15, 15, 0.5);
   position: relative;
 }
 
@@ -75,20 +74,20 @@ h1 {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #eeabe3;
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #e7b9f0;
 }
 
 #players button {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #d799e4;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -97,7 +96,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #ebe9e2;
 }
 
 .player {
@@ -110,32 +109,31 @@ h1 {
 .player-name {
   display: inline-block;
   width: 10rem;
-  font-size: 1rem;
-  color: #e1dec7;
-  text-transform: uppercase;
+  font-family: 'Cute Font', sans-serif;
+  font-size: 3rem;
+  color: #b1dbe6;
   margin: 0;
   padding: 0.5rem;
-  border-radius: 4px;
+  border-radius: 1px;
   text-overflow: ellipsis;
   text-align: center;
 }
 
 .player input {
-  font: inherit;
-  font-size: 1rem;
+  font-family: 'Cute Font', sans-serif;
+  font-size: 3rem;
   width: 10rem;
   border: none;
   padding: 0.5rem;
   animation: pulse-text 2s infinite;
-  background-color: #46432f;
+  background-color: #71458a;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .player-symbol {
   margin-left: 1rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #c9b942;
 }
 
 ol {
@@ -151,9 +149,9 @@ ol {
 #pre-game button {
   cursor: pointer;
   background: none;
-  color: #f8c031;
+  color: #d09dd4;
   border: none;
-  font-family: 'Caprasimo', cursive;
+  font-family: 'Cute Font', sans-serif;
   font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
@@ -182,11 +180,11 @@ ol {
   width: 8rem;
   height: 8rem;
   border: none;
-  background: #aca788;
-  color: #3f3b00;
+  background: #826599;
+  color: #4a468d;
   font-size: 5rem;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
+  font-family: 'Cute Font', sans-serif;
   padding: 1rem;
 }
 
@@ -200,22 +198,22 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(40, 38, 23, 0.95);
+  background-color: rgba(96, 77, 112, 0.95);
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
 #game-over h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: 'Cute Font', sans-serif;
   font-size: 4rem;
   text-align: center;
-  color: #fcd256;
+  color: #97dcee;
   margin: 0;
 }
 
 #game-over p {
   font-size: 2rem;
   text-align: center;
-  color: #e1dec7;
+  color: #daafeb;
 }
 
 #game-over button {
@@ -223,20 +221,20 @@ ol {
   margin: 0 auto;
   font-size: 1.5rem;
   background: none;
-  border: 2px solid #fcd256;
-  color: #fcd256;
+  border: 2px solid #ffadf4;
+  color: #eeeeee;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s, color 0.2s;
-  box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 #game-over button:hover {
-  background: #fcd256;
-  color: #3f3b00;
+  background: #9ec3ce;
+  color: #467c91;
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
+  box-shadow: 0 0 20px rgba(136, 186, 206, 0.8);
 }
 
 #log {
@@ -261,11 +259,11 @@ ol {
 
 #game-hints {
   text-align: center;
-  color: #46432f;
+  color: #f8f7ef;
 }
 
 #game-hints h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: 'Cute Font', sans-serif;
   font-size: 2rem;
   margin: 0;
 }
@@ -298,7 +296,7 @@ ol {
 
 @keyframes pulse-text {
   0% {
-    color: #e1dec7;
+    color: #e7dd92;
   }
   50% {
     color: #9f9d83;
@@ -322,15 +320,15 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #f6e35a;
+    border-color: #e9e8e5;
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
   }
   50% {
-    border-color: #f8c031;
+    border-color: #e19de7;
     box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
   }
   100% {
-    border-color: #f6e35a;
+    border-color: #dbaed0;
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
   }
 }
