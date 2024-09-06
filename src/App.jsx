@@ -41,8 +41,7 @@ function deriveGameBoard(gameTurns) {
   for (const turn of gameTurns) {
     const { square, player } = turn;
     const { row, col } = square;
-    // Store the player symbol (X or O)
-    gameBoard[row][col] = player;
+    gameBoard[row][col] = player; // Store the player symbol (X or O)
   }
   return gameBoard;
 }
@@ -89,18 +88,24 @@ function App() {
     setGameTurns([]);
   }
 
+  // Corrected wrap-around logic for the icon selector
   function handleIconChange(symbol, direction) {
     setIcons(prevIcons => {
       const currentIconIndex = ICONS.findIndex(icon => icon.name === prevIcons[symbol].name);
-      const nextIndex = (currentIconIndex + direction + ICONS.length) % ICONS.length;
-      const newIcon = ICONS[nextIndex];
       const otherPlayerIcon = symbol === 'X' ? prevIcons['O'] : prevIcons['X'];
-      if (newIcon.name === otherPlayerIcon.name) {
-        return prevIcons; // Prevent same icons for both players
-      }
+      
+      let nextIndex = currentIconIndex;
+      do {
+        nextIndex = (nextIndex + direction + ICONS.length) % ICONS.length;
+      } while (ICONS[nextIndex].name === otherPlayerIcon.name); // Skip the other player's icon
+  
+      const newIcon = ICONS[nextIndex];
+      
       return { ...prevIcons, [symbol]: newIcon };
     });
   }
+  
+  
 
   return (
     <main>

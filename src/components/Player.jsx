@@ -15,39 +15,54 @@ const ICONS = [
 ];
 
 export default function Player({ initialName, symbol, isActive, onChangeName, icon, onIconChange }) {
-  const [playerName, setPlayerName] = useState(initialName);
-  const [isEditing, setIsEditing] = useState(false);
+    const [playerName, setPlayerName] = useState(initialName);
+    const [isEditing, setIsEditing] = useState(false);
 
-  function handleEditClick() {
-    setIsEditing(editing => !editing);
-    if (isEditing) {
-      onChangeName(prev => ({ ...prev, [symbol]: playerName }));
+    function handleEditClick() {
+      setIsEditing(editing => !editing);
+      if (isEditing) {
+        onChangeName(prev => ({ ...prev, [symbol]: playerName }));
+      }
     }
-  }
 
-  function handleNameChange(event) {
-    setPlayerName(event.target.value);
+    function handleNameChange(event) {
+      setPlayerName(event.target.value);
+    }
+
+// Handles wrapping logic for the icon selector
+function handleIconChange(direction) {
+    onIconChange(symbol, direction);
   }
 
   let editablePlayerName = <span className="player-name">{playerName}</span>;
 
   if (isEditing) {
     editablePlayerName = (
-      <input type="text" required value={playerName} onChange={handleNameChange} />  // <== Changed to `handleNameChange`
+      <input
+        type="text"
+        required
+        value={playerName}
+        onChange={handleNameChange}
+        className="player-name-input" // Add this class to target the CSS
+      />
     );
   }
 
-  return (
-    <li className={isActive ? 'active' : undefined}>
-      <span className="player">
-        {editablePlayerName}
-        <span className="player-symbol">
-          <button onClick={() => onIconChange(symbol, -1)}>⬅️</button>
-          <span>{icon.name}</span>
-          <button onClick={() => onIconChange(symbol, 1)}>➡️</button>
-        </span>
-      </span>
-      <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
-    </li>
-  );
+    return (
+        <li className={isActive ? 'active' : undefined}>
+          <div className={`player-name-container ${isActive ? 'active' : ''}`}>
+            {editablePlayerName}
+          </div>
+          <div className="player-options-wrapper">
+            <div className="player-symbol-container">
+              <button onClick={() => handleIconChange(-1)}>⬅️</button> {/* Left button */}
+              <span className="player-symbol">{icon.name}</span>
+              <button onClick={() => handleIconChange(1)}>➡️</button> {/* Right button */}
+            </div>
+            <button className="edit-button" onClick={handleEditClick}>
+              {isEditing ? 'Save' : 'Edit'}
+            </button>
+          </div>
+        </li>
+    );
 }

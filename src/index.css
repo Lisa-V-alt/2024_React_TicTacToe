@@ -56,6 +56,55 @@ h1 {
   position: relative;
 }
 
+.player-options-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-symbol-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.player-symbol-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem !important;
+  padding: 0.5rem;
+  color: #d799e4;
+  transition: color 0.2s;
+}
+
+.player-symbol-container button:hover {
+  color: #ebe9e2;
+}
+
+.player-symbol {
+  margin: 0 1rem;
+  font-size: 1.5rem !important;
+  color: #c9b942;
+}
+
+.edit-button {
+  background: none;
+  font-family: 'Cute Font', sans-serif;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem !important;
+  padding: 0.5rem;
+  color: #d799e4;
+  transition: color 0.2s;
+}
+
+.edit-button:hover {
+  color: #ebe9e2;
+}
+
+
 #players {
   list-style: none;
   padding: 0;
@@ -119,7 +168,7 @@ h1 {
   text-align: center;
 }
 
-.player input {
+.player-name-input {
   font-family: 'Cute Font', sans-serif;
   font-size: 3rem;
   width: 10rem;
@@ -129,6 +178,7 @@ h1 {
   background-color: #71458a;
   text-align: center;
 }
+
 
 .player-symbol {
   margin-left: 1rem;
